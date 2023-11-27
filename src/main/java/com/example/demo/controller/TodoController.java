@@ -24,7 +24,7 @@ public class TodoController {
      * @return "redirect:/" 삭제 후 "/" 로 리다이렉트
      */
     @PostMapping("/todos/delete/{todoId}")
-    public String delete(@PathVariable Long todoId) {
+    public String delete(@PathVariable(name="todoId") Long todoId) {
         todoService.deleteTodo(todoId);
         return "redirect:/";
     }
